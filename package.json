@@ -1,0 +1,15 @@
+{
+  "name": "teachflow",
+  "version": "1.0.0",
+  "description": "Plataforma web que começa como **portfólio de uma professora de inglês** e evolui\r para uma ferramenta de gestão do seu microempreendimento: aulas, pagamentos e\r venda de cursos recorrentes.",
+  "license": "ISC",
+  "author": "Vitoria Ferreira Pinto",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
