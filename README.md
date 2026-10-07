@@ -11,7 +11,7 @@ venda de cursos recorrentes.
 - **Fase 3 – Receita recorrente:** cobrar mensalidades e vender cursos online.
 ## Técnologias:
 - Baanco: Sequelize e PostgreSQL
-- Frontend: Html, Rect.js, JavaScript
+- Frontend: NextJS, JavaScript  
 - Beckend: NodeJS, Express, JavaScript
 - Infra: Docker, Docker compose
 
