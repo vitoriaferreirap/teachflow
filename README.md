@@ -10,7 +10,7 @@ venda de cursos recorrentes.
 - **Fase 2 – Gestão:** agendar aulas e acompanhar alunos.
 - **Fase 3 – Receita recorrente:** cobrar mensalidades e vender cursos online.
 ## Técnologias:
-- Baanco: MongoDB, PostgreSQL
+- Baanco: Sequelize e PostgreSQL
 - Frontend: Html, Rect.js, JavaScript
 - Beckend: NodeJS, Express, JavaScript
 - Infra: Docker, Docker compose
