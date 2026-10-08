@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
         },
         nome: {
-            type: Sequelize.String,
+            type: Sequelize.STRING,
             allowNull: false
         }
     });

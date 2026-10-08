@@ -1,6 +1,8 @@
 //importação modulo sequelize
 const Sequelize = require('sequelize');
-const env = require('dotenv').config();
+require('dotenv').config();
+
+//configura conexo com bd e exporta modelos prontos
 
 //passagens de parâmetros para instanciar o objeto sequelize-ness
 //conexão banco
