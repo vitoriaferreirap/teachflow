@@ -1,13 +1,15 @@
+import Link from "next/link";
 import FormsLogin from "../../components/formsLogin";
 
 
-
-// PAGINA INICIAL DO SITE /
-
-export default function Home() {
+export default function LoginPage() {
     return (
         <main>
             <FormsLogin />
+
+            <h1>Login</h1>
+            <Link href="/cadastro">Ir para cadastro</Link>
         </main>
+
     );
 }

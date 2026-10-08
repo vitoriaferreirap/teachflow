@@ -1,7 +1,10 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
+
+
 
 export default function HelperTextAligned() {
     return (
@@ -35,6 +38,7 @@ export default function HelperTextAligned() {
                 />
 
 
+
                 <Box
                     sx={{
                         display: 'flex',
@@ -45,6 +49,7 @@ export default function HelperTextAligned() {
                 >
                     <Link href="#">recuperar acesso</Link>
                     <Link href="#">cadastrar</Link>
+                    <Checkbox control={<Checkbox defaultChecked />} label="Label" />
                 </Box>
 
                 <Button

@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 const env = require('dotenv').config();
 
 //passagens de parâmetros para instanciar o objeto sequelize-ness
+//conexão banco
 const sequelize = new Sequelize(
     process.env.BD_NAME, 
     process.env.BD_USER,
@@ -12,3 +13,5 @@ const sequelize = new Sequelize(
     });
 
 module.exports = sequelize;
+
+
