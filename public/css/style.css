@@ -1,0 +1,70 @@
+/* Estilos próprios do projeto.
+   Carregado depois do Bootstrap, então o que estiver aqui sobrescreve o padrão. */
+
+/* Cor principal: troque aqui para mudar navbar, botões e links de uma vez */
+:root {
+    --bs-primary: #0d6efd;
+    --bs-primary-rgb: 13, 110, 253;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+/* Cabeçalho de cada página (título + subtítulo) */
+.page-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Cards dos formulários e listas */
+.card {
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Cards de atalho da home */
+.card-atalho {
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card-atalho:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Site público ===== */
+
+/* Faz os links do menu (#sobre, #planos...) não ficarem escondidos atrás da navbar fixa */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.08), rgba(var(--bs-primary-rgb), 0.02));
+}
+
+/* Espaço da foto até a professora mandar a imagem */
+.foto-placeholder {
+    aspect-ratio: 4 / 5;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    border: 2px dashed rgba(var(--bs-primary-rgb), 0.3);
+}
+
+/* Número dos passos em "Como funciona" */
+.passo {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--bs-primary);
+}
+
+/* Tela de login */
+.login-wrapper {
+    max-width: 380px;
+}

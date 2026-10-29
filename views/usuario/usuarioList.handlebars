@@ -1,0 +1,38 @@
+<div class="page-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <div>
+        <h1 class="h3 fw-semibold mb-1">Alunos</h1>
+        <p class="text-body-secondary mb-0">Usuários cadastrados no sistema</p>
+    </div>
+    <a href="/usuarioCreate" class="btn btn-primary">Cadastrar aluno</a>
+</div>
+
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Login</th>
+                    <th scope="col">Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each usuarios}}
+                <tr>
+                    <td>{{login}}</td>
+                    <td>
+                        {{#if (eq tipo 1)}}
+                        <span class="badge text-bg-primary">Professora</span>
+                        {{else}}
+                        <span class="badge text-bg-secondary">Aluno</span>
+                        {{/if}}
+                    </td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="2" class="text-center text-body-secondary py-4">Nenhum aluno cadastrado ainda.</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

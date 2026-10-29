@@ -1,18 +1,27 @@
 {
   "name": "teachflow",
   "version": "1.0.0",
-  "description": "Plataforma web que começa como **portfólio de uma professora de inglês** e evolui\r para uma ferramenta de gestão do seu microempreendimento: aulas, pagamentos e\r venda de cursos recorrentes.",
-  "license": "ISC",
-  "author": "Vitoria Ferreira Pinto",
-  "type": "commonjs",
-  "main": "index.js",
+  "description": "Plataforma para professora de inglês: portfólio público e área de alunos",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "criar-professora": "node scripts/criarProfessora.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^18.0.6",
-    "express": "^5.2.1",
-    "pg": "^8.23.1",
-    "sequelize": "^6.37.8"
-  }
+    "bcryptjs": "^3.0.3",
+    "bootstrap": "^5.3.8",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^18.0.9",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.19.0",
+    "mongoose": "^7.5.0",
+    "pg": "^8.11.3",
+    "sequelize": "^6.32.1"
+  },
+  "type": "commonjs"
 }

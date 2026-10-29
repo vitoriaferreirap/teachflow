@@ -1,0 +1,180 @@
+{{!-- Página inicial pública (portfólio). Textos entre [colchetes] são para trocar pelos dados reais. --}}
+
+{{!-- ===== Destaque ===== --}}
+<section class="hero py-5">
+    <div class="container py-lg-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge text-bg-light text-primary mb-3">Aulas 100% online e ao vivo</span>
+                <h1 class="display-5 fw-bold mb-3">Aprenda inglês do seu jeito, no seu horário</h1>
+                <p class="lead text-body-secondary mb-4">
+                    Aulas particulares pensadas para o seu objetivo: conversação, trabalho, viagem ou provas.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="#contato" class="btn btn-primary btn-lg">Agendar aula experimental</a>
+                    <a href="#planos" class="btn btn-outline-primary btn-lg">Ver planos</a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                {{!-- Troque pela foto da professora: <img src="/img/professora.jpg" class="img-fluid rounded-4" alt="..."> --}}
+                <div class="foto-placeholder rounded-4 d-flex align-items-center justify-content-center">
+                    <span class="text-body-secondary">[Foto da professora]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- ===== Sobre mim ===== --}}
+<section id="sobre" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="fw-bold mb-3">Sobre mim</h2>
+                <p class="text-body-secondary">
+                    [Apresentação da professora: formação, há quanto tempo dá aula, certificações
+                    (ex.: CELTA, TESOL, Cambridge) e o que torna as aulas dela diferentes.]
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3 text-center">
+            <div class="col-6 col-md-3">
+                <div class="fs-2 fw-bold text-primary">[X]+</div>
+                <div class="small text-body-secondary">anos de experiência</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="fs-2 fw-bold text-primary">[X]+</div>
+                <div class="small text-body-secondary">alunos atendidos</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="fs-2 fw-bold text-primary">[Nível]</div>
+                <div class="small text-body-secondary">certificação</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="fs-2 fw-bold text-primary">100%</div>
+                <div class="small text-body-secondary">online</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- ===== Como funciona ===== --}}
+<section id="aulas" class="py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-2">Como funcionam as aulas</h2>
+            <p class="text-body-secondary mb-0">Simples do primeiro contato até a aula</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="passo mb-3">1</div>
+                        <h3 class="h6 fw-semibold">Aula experimental</h3>
+                        <p class="small text-body-secondary mb-0">Conversamos sobre seu objetivo e avaliamos seu nível.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="passo mb-3">2</div>
+                        <h3 class="h6 fw-semibold">Plano personalizado</h3>
+                        <p class="small text-body-secondary mb-0">Montamos um cronograma de acordo com sua rotina.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="passo mb-3">3</div>
+                        <h3 class="h6 fw-semibold">Aulas ao vivo</h3>
+                        <p class="small text-body-secondary mb-0">Por videochamada, com material incluso.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="passo mb-3">4</div>
+                        <h3 class="h6 fw-semibold">Área do aluno</h3>
+                        <p class="small text-body-secondary mb-0">Horários, materiais e recados em um só lugar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- ===== Planos ===== --}}
+<section id="planos" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-2">Planos</h2>
+            <p class="text-body-secondary mb-0">Escolha a frequência que cabe na sua rotina</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-semibold">1x por semana</h3>
+                        <p class="display-6 fw-bold my-3">R$ [valor]<span class="fs-6 fw-normal text-body-secondary">/mês</span></p>
+                        <ul class="list-unstyled small text-body-secondary mb-4">
+                            <li class="mb-2">4 aulas de [60] minutos</li>
+                            <li class="mb-2">Material incluso</li>
+                            <li>Acesso à área do aluno</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-outline-primary w-100">Quero este</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border border-2 border-primary">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h3 class="h5 fw-semibold">2x por semana</h3>
+                            <span class="badge text-bg-primary">Mais escolhido</span>
+                        </div>
+                        <p class="display-6 fw-bold my-3">R$ [valor]<span class="fs-6 fw-normal text-body-secondary">/mês</span></p>
+                        <ul class="list-unstyled small text-body-secondary mb-4">
+                            <li class="mb-2">8 aulas de [60] minutos</li>
+                            <li class="mb-2">Material incluso</li>
+                            <li>Acesso à área do aluno</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-primary w-100">Quero este</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-semibold">Intensivo</h3>
+                        <p class="display-6 fw-bold my-3">R$ [valor]<span class="fs-6 fw-normal text-body-secondary">/mês</span></p>
+                        <ul class="list-unstyled small text-body-secondary mb-4">
+                            <li class="mb-2">Foco em prova ou entrevista</li>
+                            <li class="mb-2">Frequência combinada</li>
+                            <li>Acesso à área do aluno</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-outline-primary w-100">Quero este</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{!-- ===== Contato ===== --}}
+<section id="contato" class="py-5 bg-primary text-white">
+    <div class="container text-center py-lg-4">
+        <h2 class="fw-bold mb-2">Vamos começar?</h2>
+        <p class="mb-4 opacity-75">Agende sua aula experimental gratuita</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+            {{!-- Troque pelo número real, só dígitos com DDI e DDD: https://wa.me/5541999999999 --}}
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-light btn-lg">Chamar no WhatsApp</a>
+            <a href="mailto:[email]" class="btn btn-outline-light btn-lg">Enviar e-mail</a>
+        </div>
+    </div>
+</section>

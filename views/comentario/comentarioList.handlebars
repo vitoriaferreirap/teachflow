@@ -1,0 +1,31 @@
+<div class="page-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <div>
+        <h1 class="h3 fw-semibold mb-1">Comentários</h1>
+        <p class="text-body-secondary mb-0">Comentários publicados</p>
+    </div>
+    <a href="/comentarioCreate" class="btn btn-primary">Novo comentário</a>
+</div>
+
+<div class="row g-3">
+    {{#each comentarios}}
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="h5 card-title">{{titulo}}</h2>
+                <p class="card-text">{{texto}}</p>
+            </div>
+            <div class="card-footer bg-transparent small text-body-secondary">
+                Por <strong>{{autor}}</strong>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body text-center text-body-secondary py-5">
+                Nenhum comentário publicado ainda.
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

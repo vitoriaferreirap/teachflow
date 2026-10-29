@@ -1,0 +1,41 @@
+<div class="page-header">
+    <h1 class="h3 fw-semibold mb-1">Olá, {{usuario.login}}!</h1>
+    <p class="text-body-secondary mb-0">Escolha o que deseja fazer</p>
+</div>
+
+<div class="row g-3">
+    {{#if ehProfessora}}
+    <div class="col-sm-6 col-lg-3">
+        <a href="/usuarioCreate" class="card card-atalho h-100 text-decoration-none">
+            <div class="card-body">
+                <h2 class="h6 fw-semibold text-body">Cadastrar aluno</h2>
+                <p class="small text-body-secondary mb-0">Adicionar um novo usuário ao sistema</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <a href="/usuarioList" class="card card-atalho h-100 text-decoration-none">
+            <div class="card-body">
+                <h2 class="h6 fw-semibold text-body">Listar alunos</h2>
+                <p class="small text-body-secondary mb-0">Ver todos os usuários cadastrados</p>
+            </div>
+        </a>
+    </div>
+    {{/if}}
+    <div class="col-sm-6 col-lg-3">
+        <a href="/comentarioCreate" class="card card-atalho h-100 text-decoration-none">
+            <div class="card-body">
+                <h2 class="h6 fw-semibold text-body">Cadastrar comentário</h2>
+                <p class="small text-body-secondary mb-0">Escrever um novo comentário</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <a href="/comentarioList" class="card card-atalho h-100 text-decoration-none">
+            <div class="card-body">
+                <h2 class="h6 fw-semibold text-body">Listar comentários</h2>
+                <p class="small text-body-secondary mb-0">Ver os comentários publicados</p>
+            </div>
+        </a>
+    </div>
+</div>
