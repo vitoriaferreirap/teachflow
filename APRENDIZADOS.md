@@ -92,3 +92,9 @@
   - Herança vinda do ORM (Model do Sequelize e do Mongoose)
 
 # Testes
+
+# Relacionamentos
+- 1:N Um aluno tem várias aulas; uma aula é de um aluno.
+- 1:N Um aluno faz vários comentários; um comentário tem um autor.
+- 1:N Uma aula tem vários conteúdos (PDFs/links); um material é de uma aula.
+- N:N Uma aula trabalha vários conteúdos; um conteúdo aparece em várias aulas.
