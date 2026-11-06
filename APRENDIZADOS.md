@@ -98,3 +98,11 @@
 - 1:N Um aluno faz vários comentários; um comentário tem um autor.
 - 1:N Uma aula tem vários conteúdos (PDFs/links); um material é de uma aula.
 - N:N Uma aula trabalha vários conteúdos; um conteúdo aparece em várias aulas.
+
+# Nota
+- const app = express(): cria servidor
+- express.urlencoded(): entende dados de texto puro, vindos de formulários HTML (Tipo de Middlewares)e converte em objeto no req.body
+- express.json(): entende texto no formato JSON (enviado por APIs ou pelo fetch) e converte em objeto JavaScript no req.body
+- Síncrono: uma coisa de cada vez, em fila. A próxima linha só roda quando a anterior termina. Exemplo: const x = 2 + 2;, que é instantâneo.
+- Assíncrono: a ação demora (banco, internet, arquivo), então o Node não trava esperando. Ele dispara a ação, continua atendendo outras coisas e volta quando ela termina.
+- AWAIT : acesso a banco é ASSÍNCRONO, espera o resultado antes de seguir, só funciona dentro de uma função async

@@ -1,9 +1,13 @@
 
-require('dotenv').config();                            // carrega as variáveis do .env (precisa vir antes de tudo)
+// inicia com ./ diz: a partir desta pasta
+// inciar sem ./ é: biblioteca, NODE procura dentro no node_modules onde o npm install colocou
+// carrega as variáveis do .env e coloca dentro da process.env (precisa vir antes de tudo)
+require('dotenv').config(); 
 const routes = require('./routers/route');
 const handlebars = require('express-handlebars');
-const express = require('express');
-const app = express();
+const express = require('express');
+// servidor se cria
+const app = express();
 const mongoose = require('mongoose');                  // biblioteca do MongoDB
 const StringCon = require('./config/db_mongoose');
 const db = require('./config/db_sequelize');          // PostgreSQL (Sequelize)
@@ -11,38 +15,37 @@ const session = require('express-session');
 const PgSession = require('connect-pg-simple')(session);
 const { usuarioNasViews } = require('./middlewares/auth');
 
-// config templete engine
+// engine instala e config templete/moldura engine
+// handlebars so testa verdadeiro ou falso, se for igual retorna true
 app.engine('handlebars', handlebars.engine({
   defaultLayout: 'main',
   helpers: {
     eq: (a, b) => a === b                               // uso: {{#if (eq tipo 1)}}
   }
 }));
-app.set('view engine','handlebars');
+app.set('view engine', 'handlebars');//set torna ferramenta como padrao
 
+// express.statica - entrega arquivos prontos sem passar por camadas
 // arquivos do Bootstrap (instalado via npm) ficam acessíveis em /bootstrap
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
 // arquivos próprios (CSS, imagens, JS) ficam em /public
 app.use(express.static(__dirname + '/public'));
 
+//tranforma o formulário em req.body
+//dados normalmente trafegam em texto puro ex: login=ana&senha=123 chamado de formato urlencoded
+//controller quer objeto JavaScript, então os middlewares (express.json e urlencoded fazem essa conversão) 
+// req.body = { login: 'ana', senha: '123' }, agora controller consegue ler req.body.login 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ---------------------------------------------------------------------
-// SESSÃO DE LOGIN
-// Precisa vir ANTES de app.use(routes): os middlewares rodam na ordem
-// em que aparecem aqui, e as rotas precisam de req.session já pronta.
-//
-// Caminho de cada requisição:
-//   navegador envia cookie "sid"
-//     -> session() busca os dados dessa sessão no Postgres e coloca em req.session
-//     -> usuarioNasViews() repassa req.session.usuario para as views
-//     -> routes: exigirLogin / exigirProfessora decidem se pode entrar
-//     -> controller
-//
-// A sessão fica no PostgreSQL (tabela "session", criada sozinha),
-// para não deslogar todo mundo quando o servidor reiniciar.
-// ---------------------------------------------------------------------
+//GUAARDA VOLUMES DE ACESSO AO SISTEMA 
+/**
+ * 1) dados da sessãao : quem é o ususario, o tipo
+ * 2) lugar onde sessão fica guardadaa: PostgreSQL, tabela session
+ * 3) como localizar na tabela: cookie sid, que fica o navegador (manda automatico to requisicaao em req.session)
+ * 
+ * aqui eu configuro a sessão; quem cria o req.session é a biblioteca, e quem usa é o controller e o middleware.
+ */
 app.use(session({
   store: new PgSession({
     conObject: {
@@ -64,7 +67,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 8                         // 8 horas
   }
 }));
-app.use(usuarioNasViews);
+app.use(usuarioNasViews); //somente copia user da sessão nas views
 
 app.use(routes);
 
@@ -75,10 +78,11 @@ app.use(
 )
 
 // Conecta aos bancos PRIMEIRO; só sobe o servidor se os dois derem certo
+//Testa conexao com banco
 db.sequelize.authenticate()
-  .then(() => {
+  .then(() => { // garante a ordem, cada passo so começa quando o anterior terminar, se falhar vai para o catch
     console.log('Conectado ao PostgreSQL | banco:', db.sequelize.config.database);
-    return db.sequelize.sync();           //cria tabelas que ainda não existem             // cria as tabelas que ainda não existem
+    return db.sequelize.sync();  //sync - cria tabelas que ainda não existem
   })
   .then(() => {
     console.log('Tabelas sincronizadas');
@@ -88,7 +92,7 @@ db.sequelize.authenticate()
     console.log('Conectado ao MongoDB Atlas | banco:', mongoose.connection.name);
 
     const PORT = process.env.PORT || 8081;
-    app.listen(PORT, function () {
+    app.listen(PORT, function () { //servidor sobe
       console.log('Servidor no http://localhost:' + PORT);
     });
   })
